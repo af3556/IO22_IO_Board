@@ -21,6 +21,7 @@ from the 4 onboard buttons and 8 external inputs. Usage/features:
   displaying c's, then finally a's
   - when no timers are running, the display is blanked except for the flashing
    colon (toggled every 0.5s)
+- the main loop runs to about 3.3ms (300Hz)
 
   In addition, a "test mode" is provided that runs an alternate loop() if the
 K1 button is held down in setup() when powering on. The test mode cycles various
