@@ -1,5 +1,6 @@
+# IO22D08 Arduino Library
 
-The IO22D08 is an I/O board for an Arduino Pro Mini; it provides:
+The Eletechsup IO22D08 is an I/O board for an Arduino Pro Mini; it provides:
 
 - 8 x relay outputs (10A NO/NC outputs) + LED per channel
 - 8 x optically isolated inputs
@@ -8,6 +9,19 @@ The IO22D08 is an I/O board for an Arduino Pro Mini; it provides:
 
 This project contains an Arduino library that can be used to interact with the
 IO22D08 hardware and an example sketch that exercises the library.
+
+Eletechsup appear to manufacture a number of related products, including the
+IO22C04 (4 relay/input version of the IO22D08) and other boards that use a
+Nano and provide an RS485 I/O interface, and/or 4-20mA inputs and so on. This
+appears to be their official web site and Aliexpress store:
+
+- https://485io.com/expansion-board-c-14/
+- https://eletechsupeletechsup.aliexpress.com/
+
+These seem to have the same basic design: inputs directly connected to the
+Arduino, outputs (Darlington transistor array such as the ULN2803A) and LED
+display driven via a chain of 74HC595D shift registers. As such, this code could
+likely be readily adapted to work with these other boards.
 
 ## Wokwi Emulation
 
