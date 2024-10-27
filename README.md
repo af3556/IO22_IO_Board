@@ -20,7 +20,8 @@ appears to be their official web site and Aliexpress store:
 
 These seem to have the same basic design: inputs directly connected to the
 Arduino, outputs (Darlington transistor array such as the ULN2803A) and LED
-display driven via a chain of 74HC595D shift registers. As such, this code could
+display driven via a chain of 74HC595D shift registers. In some cases the relays
+are driven directly and only the display via shift registers. This library could
 likely be readily adapted to work with these other boards.
 
 ## Wokwi Emulation

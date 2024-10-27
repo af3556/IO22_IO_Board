@@ -32,19 +32,18 @@
   - eletechsup apparently provided example code in a tarball distributed via
     MS OneDrive (!), dead as of 2024
     - some discussion here: https://forum.arduino.cc/t/io22d08-control-and-library/
-    - this work is derived from https://werner.rothschopf.net/microcontroller/202104_arduino_pro_mini_relayboard_IO22D08_en.htm
-      (aka Noiasca?)
+    - a third-party (aka Noiasca on arduino.cc) page:
+    https://werner.rothschopf.net/microcontroller/202104_arduino_pro_mini_relayboard_IO22D08_en.htm
       - in turn, that apparently incorporates work from http://www.canton-electronics.com
         (offline) and/or eletechsup
 
-  - summary of changes in this work:
+  - this work is a complete reimplementation, including:
     - documented / RE'd the operation of the shift registers that drive the
       relays and display
     - Arduino style guide for naming (i.e. camelCase)
-    - major refactoring for managing display and relays via shift registers
     - added a "self test" at power on to verify the display is working as
       expected
-
+    - documented example on using the Library
 
 - errata in previous works
   - the PLC schematic labelling leaves a _lot_ to be desired
