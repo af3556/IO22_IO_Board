@@ -122,9 +122,11 @@ void buttonHandler(AceButton* button, uint8_t eventType, uint8_t /*buttonState*/
   switch (eventType) {
     case AceButton::kEventLongPressed:
       buttonId += 4; // "virtual" buttons 8-5
+      [[fallthrough]];
     case AceButton::kEventClicked:
-      // start the relay's timer
-      buttonTimers[buttonId-1].start();  // button N => timer N-1
+      // buttonIDs may be offset from timer indices; e.g. K3-8 with timers0-5
+      buttonTimers[(buttonId-1)%numButtonTimers].start();  // button N => timer N-1
+      break;
   }
 }
 
