@@ -151,7 +151,7 @@ void inputHandler(AceButton* button, uint8_t eventType, uint8_t /*buttonState*/)
       io22d08.relaySetN(inputNum, false);
       break;
     case AceButton::kEventClicked:
-      io22d08.relaySetN(inputNum, !io22d08.relayGetN(inputNum));
+      io22d08.relaySetN(inputNum, !io22d08.relayIsOn(inputNum));
       break;
     case AceButton::kEventDoubleClicked:
       inputTimers[inputNum-1].start();  // input N => timer N-1

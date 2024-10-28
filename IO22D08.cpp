@@ -233,7 +233,8 @@ uint8_t IO22D08::relayGet()
 }
 
 // get state of a specific relay number/ID
-bool IO22D08::relayGetN(uint8_t relayNum)
+// - note, boolean return value - not RELAY_ON/RELAY_OFF
+bool IO22D08::relayIsOn(uint8_t relayNum)
 {
   return _relayBuffer & relayNumToMask(relayNum);
 }

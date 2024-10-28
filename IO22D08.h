@@ -54,7 +54,7 @@ class IO22D08
     uint8_t relayNumToMask(uint8_t n);
     void relaySetN(uint8_t relayNum, bool state);
     uint8_t relayGet();
-    bool relayGetN(uint8_t relayNum);
+    bool relayIsOn(uint8_t relayNum);
 
     const uint8_t inputPins[numInputs] {2, 3, 4, 5, 6, A0, 12, 11};    // IN1-8
     const uint8_t buttonPins[numButtons] {7, 8, 9, 10};                // K1-K4/B1-B4
