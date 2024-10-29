@@ -1,0 +1,15 @@
+IO22D08	KEYWORD1
+begin	KEYWORD2
+displayNumber	KEYWORD2
+setColon	KEYWORD2
+toggleColon	KEYWORD2
+displayCharacter	KEYWORD2
+displayMessage	KEYWORD2
+refreshDisplayAndRelays	KEYWORD2
+enableRelays	KEYWORD2
+disableRelays	KEYWORD2
+relaySet	KEYWORD2
+relayGet	KEYWORD2
+relayNumToMask	KEYWORD2
+relaySetN	KEYWORD2
+relayIsOn	KEYWORD2
