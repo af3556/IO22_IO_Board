@@ -496,7 +496,7 @@ void loop_main()
       Serial.println(F("F1<:ON"));
       io22d08.relaySet(io22d08.RELAY1, io22d08.RELAY_ON);
     }
-    if (freqSwitchState == LOW && relayState != io22d08.RELAY_OFF)
+    else if (freqSwitchState == LOW && relayState != io22d08.RELAY_OFF)
     {
       Serial.println(F("F1>:OFF"));
       // should be off but is on, turn off
