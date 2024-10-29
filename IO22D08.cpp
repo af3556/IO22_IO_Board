@@ -192,17 +192,18 @@ void IO22D08::disableRelays() {
 // state for the selected relays
 // mask bits are the relays to be changed
 // state bits are on/off
-// e.g. relaySet(0x02, 0xFF) will turn on relay 2
-// e.g. relaySet(0x02, 0x02) will also turn on relay 2
-// e.g. relaySet(0x02, true) will _not_ turn on relay 2 (true == 0x01)
-// e.g. relaySet(0x02, 0x00) will turn off relay 2
-// e.g. relaySet(0x02, 0xF1) will also turn off relay 2, but not in a clear way
-// e.g. relaySet(0x0F, 0xFF) will set relays 4-1 on
-// e.g. relaySet(0xAA, 0x00) will set the even numbered relays off
-// e.g. relaySet(0x00, 0xXX) will make no changes (no relays selected)
-// e.g. relaySet(0xFF, 0x00) will turn off all relays
+// e.g. relaySet(RELAY2, RELAY_ON) will turn on relay 2
+// e.g. relaySet(RELAY2, RELAY2) will also turn on relay 2
+// e.g. relaySet(RELAY2, true) will turn on a relay _other_ than relay 2
+// e.g. relaySet(RELAY2, RELAY_OFF) will turn off relay 2
+// e.g. relaySet(RELAY2, 0xF1) will also turn off relay 2, but not in a clear way
+// e.g. relaySet(RELAYS_NONE, ...) will make no changes (no relays selected)
+// e.g. relaySet(RELAYS_ALL, RELAY_OFF) will turn off all relays
 // e.g. relaySet(R_ALL, RELAY_OFF) will turn off all relays
 // e.g. relaySet(R1+R3+R6, RELAY_ON) will turn on relays 1, 3 and 6
+// relayGet will return the state of the given relay(s)
+// e.g. relayGet(RELAY2) will return non-zero (RELAY2) if relay 2 is on
+// e.g. relayGet(R1+R3+R6) will non-zero if any of relays 1, 3 and 6 are on
 
 uint8_t IO22D08::relayNumToMask(uint8_t relayNum)
 {
@@ -227,9 +228,9 @@ void IO22D08::relaySetN(uint8_t relayNum, bool state)
   relaySet(relayNumToMask(relayNum), state ? RELAY_ON : RELAY_OFF);
 }
 
-uint8_t IO22D08::relayGet()
+uint8_t IO22D08::relayGet(uint8_t mask)
 {
-  return _relayBuffer;
+  return _relayBuffer & mask;
 }
 
 // get state of a specific relay number/ID

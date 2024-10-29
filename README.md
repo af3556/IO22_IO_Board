@@ -13,7 +13,7 @@ IO22D08 hardware and an example sketch that exercises the library.
 Eletechsup appear to manufacture a number of related products, including the
 IO22C04 (4 relay/input version of the IO22D08) and other boards that use a
 Nano and provide an RS485 I/O interface, and/or 4-20mA inputs and so on. This
-appears to be their official web site and Aliexpress store:
+appears to be their official web site and AliExpress store:
 
 - https://485io.com/expansion-board-c-14/
 - https://eletechsupeletechsup.aliexpress.com/

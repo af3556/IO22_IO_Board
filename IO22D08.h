@@ -42,6 +42,7 @@ class IO22D08
     static const uint8_t RELAY7 = 1<<7;
     static const uint8_t RELAY8 = 1<<0;
     static const uint8_t RELAYS_ALL = 0xFF;
+    static const uint8_t RELAYS_NONE = 0xFF;
     static const uint8_t RELAY_ON = 0xFF;
     static const uint8_t RELAY_OFF = 0x00;
 
@@ -50,10 +51,10 @@ class IO22D08
     void disableRelays();
 
     void relaySet(uint8_t mask, uint8_t state);
+    uint8_t relayGet(uint8_t mask);
     // relayNum = simple numerical sequence, e.g. 3 (meaning RELAY3)
     uint8_t relayNumToMask(uint8_t n);
     void relaySetN(uint8_t relayNum, bool state);
-    uint8_t relayGet();
     bool relayIsOn(uint8_t relayNum);
 
     const uint8_t inputPins[numInputs] {2, 3, 4, 5, 6, A0, 12, 11};    // IN1-8
