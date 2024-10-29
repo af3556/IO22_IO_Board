@@ -64,7 +64,7 @@
 
 
 #include "Arduino.h"
-#include "IO22D08.h"
+#include "IO22_IO_Board.h"
 
 IO22D08::IO22D08() {}
 

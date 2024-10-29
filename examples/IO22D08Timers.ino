@@ -1,4 +1,4 @@
-/* IO22D08-timers.ino
+/* examples/IO22D08Timers.ino
 
   The IO22D08 is an I/O board for an Arduino Pro Mini; it provides:
   - 8 x relay outputs (10A NO/NC outputs) + LED per channel
@@ -33,7 +33,7 @@ values through the display and toggles the relay enable control.
 
 */
 
-#include "IO22D08.h"
+#include "IO22_IO_Board.h"
 
 #include <AceButton.h>
 using namespace ace_button;
