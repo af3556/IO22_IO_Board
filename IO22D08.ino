@@ -225,8 +225,8 @@ class FreqSwitch
     int _state = HIGH; // output initial state
 
   public:
-    // anything longer than this is considered DC (stopped)
-    // making this too long will slow the 
+    // anything longer than this is considered DC (stopped); making this too
+    // long will slow the filter response once the signal starts up again
     const unsigned long PERIOD_MAX = 500*1000UL; // 500ms = 2Hz
 
     FreqSwitch() {}
