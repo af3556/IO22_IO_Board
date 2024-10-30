@@ -242,16 +242,15 @@ class FreqSwitch
 
     void sample() // this is called by the ISR; keep it short
     {
+      // as the signal approaches DC this function will be called at increasing
+      // intervals; if the signal is removed it won't get called at all; and thus
+      // the period won't get updated
       static unsigned long currentMicros;
       currentMicros = micros();
-      // stop tracking input signal beyond the defined limit
-      if (currentMicros - _previousMicros < PERIOD_MAX)
-      {
-        // have to do the filtering here to ensure we catch 'em all
-        // - see above re. this moving average calculation
-        _periodN += (currentMicros - _previousMicros) - _period;
-        _period = _periodN >> _filterN;
-      }
+      // have to do the filtering here to ensure we catch 'em all
+      // - see above re. this moving average calculation
+      _periodN += (currentMicros - _previousMicros) - _period;
+      _period = _periodN >> _filterN;
       _previousMicros = currentMicros;
     }
 
